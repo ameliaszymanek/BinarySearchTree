@@ -37,20 +37,35 @@ namespace BinarySearchTree
                 while (true)
                 {
                     parentNode = currentNode;
-                    if(data < currentNode.data)
+                    //determine if > root node or < root node
+                    //if > root node create leftChild
+                    if (data < currentNode.data)
                     {
                         currentNode = currentNode.leftChild;
-                        if(currentNode = null)
+                        if(currentNode == null)
                         {
                             parentNode.leftChild = newNode;
+                            //break out of fn
+                            break;
+                        }
+                    }
+                    //if < root node create rightChild
+                    else
+                    {
+                        currentNode = currentNode.rightChild;
+                        //create parent???
+                        if (currentNode == null)
+                        {
+                            parentNode.rightChild = newNode;
+                            break;
                         }
                     }
                 }
             }
 
-            //create parent???
-            //determine if > root node or < root node
-            //if > root node create leftChild
+           
+            
+            
             //if < root node create rightChild
             //
         }
