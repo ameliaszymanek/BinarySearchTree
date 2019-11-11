@@ -62,12 +62,6 @@ namespace BinarySearchTree
                     }
                 }
             }
-
-           
-            
-            
-            //if < root node create rightChild
-            //
         }
 
         //public void RemoveNode()
@@ -75,9 +69,28 @@ namespace BinarySearchTree
         //    //logic
         //}
 
-        public void Search(int x)
+        public bool Search(int num)
         {
-            //logic
+            Node current = root;
+            while(true)
+            {
+                if (num == current.data)
+                {
+                    return true;
+                }
+                else if (num < current.data && current.leftChild != null)
+                {
+                    current = current.leftChild;
+                }
+                else if (current.rightChild != null)
+                {
+                    current = current.rightChild;
+                }
+
+                else
+                {
+                    return false;
+                }
         }
 
         public void Menu()
